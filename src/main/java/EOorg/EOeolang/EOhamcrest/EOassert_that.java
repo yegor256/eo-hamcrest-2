@@ -55,14 +55,15 @@ public class EOassert_that extends PhDefault {
 
             while (i < args.length) {
                 Phi arg = args[i];
-                boolean term = new Dataized(arg).take(Boolean.class);
-                if (!term) {
+                Object data = new Dataized(arg).take();
+                if (data instanceof Boolean && !((Boolean) data)) {
                     result = false;
                     break;
                 }
 
-                if ("or".equals(arg.getClass().getSimpleName()) && i != args.length - 1) {
+                if ("and".equals(data) && i != args.length - 1) {
                     boolean right = new Dataized(args[i + 1]).take(Boolean.class);
+                    result &= right;
                     i++;
                 }
                 i++;

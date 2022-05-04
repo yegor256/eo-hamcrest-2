@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright (c) 2020-2021
+# Copyright (c) 2022 Graur Andrew
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,25 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-+package org.eolang.hamcrest
-+alias org.eolang.hamcrest.assert-that
-+alias org.eolang.hamcrest.matcher.equal-to
-+alias org.eolang.hamcrest.matcher.or
-+alias org.eolang.hamcrest.matcher.and
-+junit
++package org.eolang.hamcrest.matcher
++rt jvm org.eolang:eo-hamcrest:0.0.0
 
-[] > first-test
-  assert-that > @
-    "first-test"
-    4.add 4
-    equal-to 8
-    or
-    equal-to 3
-
-[] > two-numbers
-  assert-that > @
-    "two-numbers"
-    7.add 3
-    equal-to 10
-    and
-    equal-to 10
+[] > and
+  "and" > @
