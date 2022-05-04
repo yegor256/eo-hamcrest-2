@@ -15,6 +15,11 @@ EO-Hamcrest is a framework for writing matcher objects, allowing you to declarat
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.equal-to
++alias org.eolang.hamcrest.matcher.or
++alias org.eolang.hamcrest.matcher.less-than
++alias org.eolang.hamcrest.matcher.and
++alias org.eolang.hamcrest.matcher.greater-than
 +junit
 
 [] > first-test
@@ -42,6 +47,9 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.is
++alias org.eolang.hamcrest.matcher.anything
++alias org.eolang.hamcrest.matcher.described-as
 +junit
 
 [] > core-matchers-test
@@ -63,6 +71,9 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.any-of
++alias org.eolang.hamcrest.matcher.all-of
++alias org.eolang.hamcrest.matcher.equal-to
 +junit
 
 [] > logical-matchers-test
@@ -98,6 +109,7 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.less-than
 +junit
 
 [] > collections-test
@@ -118,15 +130,18 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.close-to
++alias org.eolang.hamcrest.matcher.or
++alias org.eolang.hamcrest.matcher.less-than
 +junit
 
 [] > numbers-matchers-test
   assert-that
     "floating point number closed to 10"
     31.div 3
-  .close-to 10
-    .or
-      .less-than 20
+    close-to 10
+    or
+    less-than 20
   
 ```
 
@@ -139,6 +154,9 @@ Hamcrest comes with a library of useful matchers. Here are some of the most impo
 ```
 +package org.eolang
 +alias org.eolang.hamcrest.assert-that
++alias org.eolang.hamcrest.matcher.equal-to-ignoring-case
++alias org.eolang.hamcrest.matcher.or
++alias org.eolang.hamcrest.matcher.starts-with
 +junit
 
 [] > text-matchers-test
